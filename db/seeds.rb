@@ -1,4 +1,6 @@
+require "open-uri"
 require 'faker'
+
 Booking.destroy_all
 UserRole.destroy_all
 Ressource.destroy_all
@@ -16,6 +18,8 @@ puts "#{individual.title} created"
 puts "#{filmmaker.title} created"
 puts "#{photographer.title} created"
 
+file_y = URI.open('https://kitt.lewagon.com/placeholder/users/Lawofexecution')
+
 client = User.new(
   first_name: 'yassine',
   last_name: 'daoudi',
@@ -24,22 +28,24 @@ client = User.new(
   password_confirmation: "password",
   phone_number: '0661234432'
 )
+client.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
 client.save!
 UserRole.create!(user:client,role: [individual, company].sample)
 
-
-  creator = User.new(
-    first_name: "salma",
-    last_name: "khattabi",
-    bio: Faker::Lorem.sentence(word_count: 5),
-    email: "sk@lensens.ma",
-    password: "password",
-    password_confirmation: "password",
-    phone_number: "07700000101"
-  )
-  creator.save!
-  user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)
-  puts "#{creator.first_name} is a #{user_role.role.title}"
+file_s = URI.open('https://kitt.lewagon.com/placeholder/users/salmakhattabi')
+creator = User.new(
+  first_name: "salma",
+  last_name: "khattabi",
+  bio: Faker::Lorem.sentence(word_count: 5),
+  email: "sk@lensens.ma",
+  password: "password",
+  password_confirmation: "password",
+  phone_number: "07700000101"
+)
+creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
+creator.save!
+user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)
+puts "#{creator.first_name} is a #{user_role.role.title}"
 
 executions = 2
 executions.times do
@@ -67,6 +73,7 @@ executions.times do
     password_confirmation: "password",
     phone_number: Faker::Number
   )
+  creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
   creator.save!
   user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)
   puts "#{creator.first_name} is a #{user_role.role.title}"
