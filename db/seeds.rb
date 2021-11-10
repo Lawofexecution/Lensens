@@ -32,7 +32,7 @@ UserRole.create!(user:client,role: [individual, company].sample)
     first_name: "salma",
     last_name: "khattabi",
     bio: Faker::Lorem.sentence(word_count: 5),
-    email: sk.lensens.ma,
+    email: "sk@lensens.ma",
     password: "password",
     password_confirmation: "password",
     phone_number: "07700000101"
