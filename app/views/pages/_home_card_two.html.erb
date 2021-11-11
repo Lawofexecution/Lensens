@@ -1,0 +1,10 @@
+<div class="cards">
+  <% @trending_creators.each do |creator| %>
+    <div class="card fill-orange" data-card="0">
+      <div class="card__icon" data-icon="1">
+        <%= cl_image_tag creator.photo.key, height: 300, width: 400, crop: :fill  %>
+      </div>
+      <div class="card__detail"> <%= creator.first_name %>  <%= creator.last_name  %> </div>
+    </div>
+  <% end %>
+</div>
