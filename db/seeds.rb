@@ -30,7 +30,7 @@ client = User.new(
 )
 client.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
 client.save!
-UserRole.create!(user:client,role: [individual, company].sample)
+UserRole.create!(user: client, role: [individual, company].sample)
 
 file_s = URI.open('https://kitt.lewagon.com/placeholder/users/salmakhattabi')
 creator = User.new(
@@ -73,7 +73,8 @@ executions.times do
     password_confirmation: "password",
     phone_number: Faker::Number
   )
-  creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
+  random_creator = URI.open("https://picsum.photos/200")
+  creator.photo.attach(io: random_creator, filename: 'salma.png', content_type: 'image/png')
   creator.save!
   user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)
   puts "#{creator.first_name} is a #{user_role.role.title}"
