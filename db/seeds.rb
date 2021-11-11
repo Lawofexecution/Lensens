@@ -30,7 +30,7 @@ client = User.new(
   password: "password",
   password_confirmation: "password",
   phone_number: '0661234432',
-  address: address
+  address: "29,rue constantine Casablanca"
 )
 client.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
 client.save!
