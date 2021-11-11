@@ -50,7 +50,7 @@ creator = User.new(
   password: "password",
   password_confirmation: "password",
   phone_number: "07700000101",
-   address: address
+   address: "29,rue zerktouni Casablanca"
 )
 creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
 creator.save!
@@ -69,15 +69,13 @@ creator = User.new(
   password: "password",
   password_confirmation: "password",
   phone_number: "07700000101",
-   address: address
+   address: "2,rue roudani Casablanca"
 )
 creator.photo.attach(io: file_l, filename: 'loubna.png', content_type: 'image/png')
 creator.save!
 user_role = UserRole.create!(user: creator, role: filmmaker)
 
 puts "loubna's profile created ! "
-
-
 
 executions = 2
 executions.times do
@@ -88,7 +86,7 @@ executions.times do
     password: "password",
     password_confirmation: "password",
     phone_number: Faker::Number,
-    address: address
+    address: "29,rue sebta Casablanca"
   )
   client.save!
   user_role = UserRole.create!(user:client,role: [individual, company].sample)
@@ -105,7 +103,7 @@ creator_addresses.each do |address|
     password: "password",
     password_confirmation: "password",
     phone_number: Faker::Number,
-    address: address
+    address: "29,rue gauthier Casablanca"
   )
   random_creator = URI.open("https://picsum.photos/200")
   creator.photo.attach(io: random_creator, filename: 'salma.png', content_type: 'image/png')
