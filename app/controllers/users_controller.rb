@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
-    trending_photographers = Role.where(title: "Photographer").first.users
-    trending_filmmakers = Role.where(title: "Filmmaker").first.users
-    @trending_creators = trending_photographers + trending_filmmakers
+    @creators = Role.where("title ILIKE 'Photographer' OR title ILIKE 'Filmmaker' ").first.users
+    @markers = @creators.geocoded.map do |creator|
+      {
+        lat: creator.latitude,
+        lng: creator.longitude
+      }
+    end
   end
 
   def show
