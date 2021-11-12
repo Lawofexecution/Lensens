@@ -25,8 +25,8 @@ import "bootstrap";
 // import { card_carousel } from '../plugins/card_carousel';
 // import { hoverCard } from '../vanilla/hover_card';
 
+import { initMapbox } from '../plugins/init_mapbox';
+
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  // hoverCard();
-});
+  initMapbox();
+})
