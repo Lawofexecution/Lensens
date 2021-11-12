@@ -22,9 +22,11 @@ ActiveStorage.start()
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// import { card_carousel } from '../plugins/card_carousel';
+// import { hoverCard } from '../vanilla/hover_card';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // hoverCard();
 });
