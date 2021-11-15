@@ -1,5 +1,58 @@
-All creators :  <%= @creators.count %>
-<div id="map"
-     style="width: 600px; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class= "container ">
+  <div class="home-container">
+    <div class="cards-group">
+      <%# <form action="/action_page.php">
+        <div class="form-group row">
+          <div class="form-check col d-flex">
+            <label class="form-check-label" for="photo">
+              Photographie
+            </label>
+            <input class="form-check-input" type="radio" name="categorie"  id="photo" value="option1" checked>
+          </div>
+          <br/>
+          <div class="form-check col d-flex">
+            <label class="form-check-label" for="video">
+              Videographie
+            </label>
+            <input class="form-check-input" type="radio" name="categorie"  id="video" value="option2">
+          </div>
+        </div>
+      </form> %>
+
+    <%= form_with url: "/users", method: :get do |form| %>
+      <div class="row">
+        <div class="col-md-9">
+          <%= form.label :address, "Vers où ?" %>
+          <%= form.text_field :address %>
+        </div>
+        <div class="col-md-3">
+          <%= form.select :role, ["Videographe", "Photographe"] %>
+        </div>
+      </div>
+      <%= form.submit "Recherche" %>
+    <% end %>
+    </div>
+
+    <div id="map"
+      class="flex-grow-3 ms-4 map"
+      style="width: 400px; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+
+  <div class="creator-list">
+    <%= @creators.each do |creator| %>
+      <%= link_to user_path(creator) do %>
+        <div class="card-product">
+          <%= cl_image_tag creator.photo.key %>
+          <div class="card-product-infos">
+            <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
+            <p><%= creator.bio %></p>
+          </div>
+        </div>
+      <% end  %>
+    <% end  %>
+  </div>
+</div>

@@ -93,8 +93,17 @@ executions.times do
   user_role = UserRole.create!(user:client,role: [individual, company].sample)
   puts "#{client.first_name} is a #{user_role.role.title}"
 end
-creator_addresses = ["Anfaplace Mall, Casablanca 20200","rue d'arcachon casablanca 20500","90 bd de la corniche casabalanca","400 bd roudani casablanca"," Rabat 10106","rue camellia rabat","ave Mohammed v, Rabat
-  ","Bd de Fes, Casablanca 20250"]
+
+creator_addresses = [
+  "Anfaplace Mall, Casablanca 20200",
+  "rue d'arcachon casablanca 20500",
+  "90 bd de la corniche casabalanca",
+  "400 bd roudani casablanca",
+  " Rabat 10106",
+  "rue camellia rabat",
+  "ave Mohammed v, Rabat",
+  "Bd de Fes, Casablanca 20250"
+]
 creator_addresses.each do |address|
   creator = User.new(
     first_name: Faker::Name.name,
