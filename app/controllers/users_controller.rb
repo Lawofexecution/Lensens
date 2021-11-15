@@ -24,5 +24,6 @@ class UsersController < ApplicationController
 
   def show
     @creator = User.find(params[:id])
+    @booking = Booking.new
   end
 end
