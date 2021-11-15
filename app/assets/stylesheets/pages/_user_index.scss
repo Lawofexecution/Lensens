@@ -2,40 +2,40 @@
   display:flex;
   justify-content:space-between;
 }
-.group-cards{
-  width:min-content;
-  height:30vh;
+
+.search-form {
+  padding: 0 50px;
+  width: 460px;
+  height: 99%;
+  background-color: pink;
+  border: 1px solid rgb(20, 20, 20);
+  text-align: center;
+
+  legend {
+    visibility: hidden;
+  }
 }
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
+.search-bar {
+  position: relative;
+  width: 350px;
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+  label {
+    visibility: hidden;
+  }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  i {
+    position: absolute;
+    bottom: 8px;
+    right: 7px;
+  }
 }
+.card-infos{
+  background-color: pink;
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
 }
-
-.card-product .card-product-infos {
-  padding: 16px;
+.img-container{
+  img{
+    width: 100%;
+  }
 }

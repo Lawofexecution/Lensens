@@ -21,6 +21,27 @@ body{
     display: block;
 }
 
+/* figcaption */
+figcaption {
+  display: block;
+
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+
+  position: absolute;
+  top: 0;
+  right: 12px;
+
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
 .profil-cover img{
       width: 7rem;
     display: block;
