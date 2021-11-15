@@ -1,44 +1,34 @@
-<!-- flip-card-container -->
-  <h2> the top 6 photographe of the month</h2>
-  <div class="d-flex flex-nowrap justify-content-center align-items-center my-container" >
-    <% @trending_creators.each_with_index do |creator,i| %>
-      <div class="flip-card-container" >
-        <div class="flip-card">
-            <div class="card-front-one">
-              <figure>
-                 <div class="img-bg">
-                  <%= cl_image_tag creator.photo.key, height: 100, width: 200, crop: :fit %>
-                </div>
-                <figcaption><%= creator.first_name %>  <%= creator.last_name  %></figcaption>
-              </figure>
+<div class="d-flex mb-3 my-container">
+  <% @trending_creators.each_with_index do |creator,i| %>
+    <%= link_to user_path(creator) do %>
+      <div class="profil-card">
 
-               <ul id="card">
-                <li id="card">Detail 1</li>
-              </ul>
-            </div>
+        <div class="profil-avatar">
 
-          <div class="card-back-one">
-            <figure>
-                 <div class="img-bg">
-                  <img src="https://wallpaperaccess.com/full/1143033.jpg">
-                 </div>
-                <figcaption><%= creator.first_name %>  <%= creator.last_name  %></figcaption>
-              </figure>
-               <button>Book</button>
-
-            <div class="design-container">
-              <span class="design design--1"></span>
-              <span class="design design--2"></span>
-              <span class="design design--3"></span>
-              <span class="design design--4"></span>
-              <span class="design design--5"></span>
-              <span class="design design--6"></span>
-              <span class="design design--7"></span>
-              <span class="design design--8"></span>
-            </div>
+          <div class="img-bg">
+            <%= cl_image_tag creator.photo.key, crop: :fit %>
+          </div>
+          <div class="profil-verifed">
+            <svg viewBox="0 0 512 512"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#2196f3"/><path d="m385.75 201.75-138.667969 138.664062c-4.160156 4.160157-9.621093 6.253907-15.082031 6.253907s-10.921875-2.09375-15.082031-6.253907l-69.332031-69.332031c-8.34375-8.339843-8.34375-21.824219 0-30.164062 8.339843-8.34375 21.820312-8.34375 30.164062 0l54.25 54.25 123.585938-123.582031c8.339843-8.34375 21.820312-8.34375 30.164062 0 8.339844 8.339843 8.339844 21.820312 0 30.164062zm0 0" fill="#fafafa"/></svg>
           </div>
 
         </div>
-    </div>
+
+        <div class="profil-content">
+
+          <div class="profil-username"><%= creator.last_name  %></div>
+          <div class="profil-name"><%= creator.first_name %> <br><%= i < 2 ? "Cinéaste" : "Vidéaste" %></div>
+          <div class="profil-des">Sharing more stuff from the Social Analytics tool project.</div>
+          <div class="d-flex justify-content-center mt-5">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+      </div>
     <% end %>
-  </div>
+  <% end %>
+</div>

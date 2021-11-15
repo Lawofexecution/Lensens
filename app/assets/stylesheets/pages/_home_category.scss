@@ -9,12 +9,6 @@
 
 html { font-size: 62.5%; }
 
-body {
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  position: relative;
-}
-
 /* Typography =======================*/
 
 /* Headings */
@@ -29,6 +23,7 @@ body {
 .inside-page__heading {
   padding-bottom: 1rem;
   width: 100%;
+
 }
 
 /* Mixed */
@@ -47,11 +42,9 @@ body {
 .inside-page__heading--ski,
 .card-front__text-view--ski { color: #2aaac1; }
 
-.inside-page__heading--beach,
-.card-front__text-view--beach { color: #fa7f67; }
 
 .inside-page__heading--camping,
-.card-front__text-view--camping { color: #00b97c; }
+.card-front__text-view--camping {  color: #fa7f67;  }
 
 /* Front cover */
 
@@ -279,19 +272,12 @@ body {
   );
 }
 
-.card-front__tp--beach {
-  background: linear-gradient(
-    to bottom,
-    #fb9b88,
-    #f86647
-  );
-}
 
 .card-front__tp--camping {
   background: linear-gradient(
     to bottom,
-    #00db93,
-    #00b97d
+    #fb9b88,
+    #f86647
   );
 }
 

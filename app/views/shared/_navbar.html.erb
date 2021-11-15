@@ -1,24 +1,47 @@
-<nav>
-  <div class="navbar  navbar-lewagon">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
-  </div>
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<div class="navbar navbar-expand-sm navbar-lewagon">
+
+  <nav>
+    <label for="toggle-1" class="btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <input type="checkbox" id="toggle-1">
+
+    <ul class="menu">
+      <a href="#"><li>about</li></a>
+      <a href="#"><li>features</li></a>
+      <a href="#"><li>contact</li></a>
+      <a href="#"><li>home</li></a>
+    </ul>
+
+  </nav>
+    <a class="navbar-brand" href="#">
+      <div class="logo">
+        <%= image_tag "logo.png" %>
+      </div>
+    </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <label for="toggle-1" class="btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label> %>
 
-  <input type="checkbox" id="toggle-1">
 
-  <ul class="menu">
-    <a href="#"><li>about</li></a>
-    <a href="#"><li>features</li></a>
-    <a href="#"><li>contact</li></a>
-    <a href="#"><li>home</li></a>
-  </ul>
-</nav>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">log in</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

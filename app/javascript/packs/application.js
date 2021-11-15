@@ -27,8 +27,10 @@ import {initFlatpickr} from "../plugins/init_flatpickr";
 // import { hoverCard } from '../vanilla/hover_card';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initVideo } from '../plugins/init_video';
 
 document.addEventListener('turbolinks:load', () => {
- // initMapbox();
+  initMapbox();
+  initVideo();
   initFlatpickr();
 })
