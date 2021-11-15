@@ -2,6 +2,35 @@
   display:flex;
   justify-content:space-between;
 }
+
+.search-form {
+  padding: 0 50px;
+  width: 460px;
+  height: 99%;
+  background-color: pink;
+  border: 1px solid rgb(20, 20, 20);
+  text-align: center;
+
+  legend {
+    visibility: hidden;
+  }
+}
+
+.search-bar {
+  position: relative;
+  width: 350px;
+
+  label {
+    visibility: hidden;
+  }
+
+  i {
+    position: absolute;
+    bottom: 8px;
+    right: 7px;
+  }
+}
+
 .group-cards{
   width:min-content;
   height:30vh;

@@ -1,58 +1,47 @@
 <div class= "container ">
-  <div class="home-container">
-    <div class="cards-group">
-      <%# <form action="/action_page.php">
-        <div class="form-group row">
-          <div class="form-check col d-flex">
-            <label class="form-check-label" for="photo">
-              Photographie
-            </label>
-            <input class="form-check-input" type="radio" name="categorie"  id="photo" value="option1" checked>
-          </div>
-          <br/>
-          <div class="form-check col d-flex">
-            <label class="form-check-label" for="video">
-              Videographie
-            </label>
-            <input class="form-check-input" type="radio" name="categorie"  id="video" value="option2">
-          </div>
-        </div>
-      </form> %>
+  <h1>Choisissez le meilleur créateur pour vous</h1>
+  <div class ="home-container mt-12">
 
-    <%= form_with url: "/users", method: :get do |form| %>
-      <div class="row">
-        <div class="col-md-9">
-          <%= form.label :address, "Vers où ?" %>
-          <%= form.text_field :address %>
+    <div>
+      <%= simple_form_for :index, method: :get, html: { class: "search-form" } do |f| %>
+        <h2>Filtrer par:</h2>
+        <div class="search-bar">
+          <%= f.input :ville, placeholder: "Ville ?" %>
+          <i class="fas fa-search"></i>
         </div>
-        <div class="col-md-3">
-          <%= form.select :role, ["Videographe", "Photographe"] %>
+        <div class="d-flex">
+          <%=f.input :role, as: :radio_buttons, collection: ["Photographe", "Cinéaste"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
         </div>
-      </div>
-      <%= form.submit "Recherche" %>
-    <% end %>
+        <div class="d-flex">
+          <%=f.input :price_per_day, as: :radio_buttons, collection: ["< 1000", "1000 - 5000"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+        </div>
+        <%= f.button :submit, "Recherchez", class: "custom-btn" %>
+      <% end %>
     </div>
 
-    <div id="map"
-      class="flex-grow-3 ms-4 map"
-      style="width: 400px; height: 400px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div>
+      <div id="map"
+        style="width: 465px; height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
 
   </div>
-
-  <div class="creator-list">
+  <div class="content">
+  <div class="creator-list" class="card" style ="backround-image:url()>
     <%= @creators.each do |creator| %>
       <%= link_to user_path(creator) do %>
-        <div class="card-product">
+      <div class= "cards>
           <%= cl_image_tag creator.photo.key %>
-          <div class="card-product-infos">
+          <div class="card-infos">
             <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
             <p><%= creator.bio %></p>
           </div>
         </div>
       <% end  %>
     <% end  %>
+    </div>
+    </div>
   </div>
 </div>
