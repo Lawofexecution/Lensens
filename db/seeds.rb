@@ -114,7 +114,7 @@ creator_addresses.each do |address|
     phone_number: Faker::Number,
     address: "29,rue gauthier Casablanca"
   )
-  random_creator = URI.open("https://picsum.photos/200")
+  random_creator = URI.open("https://picsum.photos/500")
   creator.photo.attach(io: random_creator, filename: 'salma.png', content_type: 'image/png')
   creator.save!
   user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)

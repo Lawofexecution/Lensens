@@ -26,7 +26,9 @@ import "bootstrap";
 // import { hoverCard } from '../vanilla/hover_card';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initVideo } from '../plugins/init_video';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initVideo();
 })
