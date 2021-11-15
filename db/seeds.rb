@@ -26,6 +26,7 @@ file_y = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369
 client = User.new(
   first_name: 'yassine',
   last_name: 'daoudi',
+   bio: Faker::Lorem.sentence(word_count: 5),
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
