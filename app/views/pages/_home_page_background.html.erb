@@ -1,30 +1,28 @@
+<!-- Start video hero -->
+<div class="video-hero jquery-background-video-wrapper demo-video-wrapper" style="min-height:85vh">
+  <video class="jquery-background-video" autoplay muted loop poster="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.jpg">
+    <source src="https://videos.covideo.com/videos/150482_46868_qryv9vbubk1636974921.mp4" type="video/mp4">
+    <source src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.webm" type="video/webm">
+    <source src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.ogv" type="video/ogg">
+  </video>
+	  <div class="video-overlay"></div>
+  	<div class="page-width">
+		    <div class="video-hero--content">
+          <h2>Background Video Demo</h2>
+          <p>Full width video hero</p>
+          <div class=home_buttons>
+            <%= link_to "je suis client", users_path, class: "btn btn-ghost" %>
+            <%= link_to "je suis photographe", users_path, class: "btn btn-ghost" %>
+          </div>
+    		</div>
+  	</div>
+</div>
+<!-- End video hero -->
 
-<nav>
-  <label for="toggle-1" class="btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-
-  <input type="checkbox" id="toggle-1">
-
-  <ul class="menu">
-    <a href="#"><li>about</li></a>
-    <a href="#"><li>features</li></a>
-    <a href="#"><li>contact</li></a>
-    <a href="#"><li>home</li></a>
-  </ul>
-</nav>
-
-<header>
-  <div class="logo">
-    <%= image_tag "logo.png" %>
-  </div>
-
-  <p class="tagline">Let immortalize moments together</p>
-
-  <div class="cta">
-    <%=link_to"je suis client", root_path, class:"btn btn-outline-warning btn-lg "%>
-    <%=link_to"je suis photographer", root_path, class:"btn btn-outline-warning btn-lg"%>
-  </div>
-</header>
+<div id="content">
+	  <div class="page-width">
+    		<h3>Easy Background Videos</h3>
+		    <p>This page uses the <a href="https://github.com/BGStock/jquery-background-video" target="_blank">jQuery Background Video</a> plugin along with some simple html and css to generate this background video.</p>
+		    <p>The video overlay pattern is available at <a href="http://html5backgroundvideos.com/pattern-overlays/" target="_blank">http://html5backgroundvideos.com/pattern-overlays/</a></p>
+	  </div>
+</div>
