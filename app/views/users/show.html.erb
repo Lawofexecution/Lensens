@@ -1,4 +1,43 @@
-<%= @creator.email %>
-<%= cl_image_tag @creator.photo.key, height: 300, width: 400, crop: :fill %>
-<%= cl_image_tag "x5ydocto8xjznazkdco54q0ln0j4", height: 300, width: 300, crop: :fill %>
-<%= image_tag "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555610/lensens%20/photographe/ben-parker-OhKElOkQ3RE-unsplash_surdve.jpg", height: 300, width: 400, crop: :fill %>
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-12 ">
+      <%= render "components/carousel" %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+
+  <div class="row info-row">
+    <div class="col-sm-8 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <span class="badge badge-success p-2 m-2">Portrait</span>
+            <span class="badge badge-success p-2 m-2">Landscape</span>
+            <span class="badge badge-success p-2 m-2">Sport</span>
+            <span class="badge badge-success p-2 m-2">Fashion</span>
+            <span class="badge badge-success p-2 m-2">Street</span>
+          </div>
+          <div class="col-sm-12 ">
+            <%= render "components/avatar" %>
+            <%= @creator.short_name %>
+          </div>
+          <div class="col-sm-12">
+            <p class="bio">
+              <%= @creator.bio %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 ">
+    <span style="display:none" class="widget-content" data-unavailable="<%= @creator.unavailable_dates.to_json %>" ></span>
+      <%= simple_form_for([@creator,@booking]) do |f| %>
+        <%= f.input :start_date, as: :string, placeholder: "De :", wrapper_html: { class: "inline_field_wrapper" } %>
+        <%= f.input :end_date, as: :string, placeholder: "À :", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+        <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import {initFlatpickr} from "../plugins/init_flatpickr";
 
 // Internal imports, e.g:
 // import { card_carousel } from '../plugins/card_carousel';
@@ -31,4 +32,5 @@ import { initVideo } from '../plugins/init_video';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initVideo();
+  initFlatpickr();
 })
