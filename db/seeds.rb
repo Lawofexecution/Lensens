@@ -25,6 +25,7 @@ file_y = URI.open('https://kitt.lewagon.com/placeholder/users/Lawofexecution')
 
 client = User.new(
   first_name: 'yassine',
+  bio: Faker::Lorem.sentence(word_count: 100),
   last_name: 'daoudi',
   email: 'yd@lensens.ma',
   password: "password",
@@ -45,7 +46,7 @@ file_s = URI.open('https://kitt.lewagon.com/placeholder/users/salmakhattabi')
 creator = User.new(
   first_name: "salma",
   last_name: "khattabi",
-  bio: Faker::Lorem.sentence(word_count: 5),
+  bio: Faker::Lorem.sentence(word_count: 100),
   email: "sk@lensens.ma",
   password: "password",
   password_confirmation: "password",
