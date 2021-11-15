@@ -28,20 +28,11 @@
     </div>
 
   </div>
-  <div class="content">
-  <div class="creator-list" class="card" style ="backround-image:url()>
-    <%= @creators.each do |creator| %>
-      <%= link_to user_path(creator) do %>
-      <div class= "cards>
-          <%= cl_image_tag creator.photo.key %>
-          <div class="card-infos">
-            <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
-            <p><%= creator.bio %></p>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <% @creators.each do |creator| %>
+       <%= render "components/creator_card",creator: creator %>
       <% end  %>
-    <% end  %>
-    </div>
     </div>
   </div>
 </div>

@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def index
     if params[:address].nil?
-      @creators = Role.where("title ILIKE 'Photographer' OR title ILIKE 'Filmmaker' ").first.users
+      creators_ids = Role.left_outer_joins(:users).where("title = 'Filmmaker' or title='Photographer'").pluck(:user_id)
+      @creators = User.where(id: creators_ids)
       @markers = @creators.geocoded.map do |creator|
         {
           lat: creator.latitude,

@@ -21,7 +21,7 @@ puts "#{photographer.title} created"
 
 puts "Creating yassine's profile"
 
-file_y = URI.open('https://kitt.lewagon.com/placeholder/users/Lawofexecution')
+file_y = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg')
 
 client = User.new(
   first_name: 'yassine',
@@ -34,14 +34,13 @@ client = User.new(
 )
 client.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
 client.save!
+UserRole.create!(user: client, role: photographer)
 
 puts "Yassine's profile created ! "
 
 puts "Creating salma's profile"
 
-UserRole.create!(user: client, role: [individual, company].sample)
-
-file_s = URI.open('https://kitt.lewagon.com/placeholder/users/salmakhattabi')
+file_s = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg')
 creator = User.new(
   first_name: "salma",
   last_name: "khattabi",
@@ -54,13 +53,13 @@ creator = User.new(
 )
 creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
 creator.save!
-user_role = UserRole.create!(user: creator, role: photographer)
+user_role = UserRole.create!(user: creator, role: individual)
 
 puts "Salma's profile created ! "
 
 puts "Creating loubna's profile"
 
-file_l = URI.open('https://kitt.lewagon.com/placeholder/users/loucharr')
+file_l = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555622/lensens%20/photographe/Loubna_B_W_-_Tarikarik_Hilali_Talk_Le_wagon_a9yzw5.jpg')
 creator = User.new(
   first_name: "loubna",
   last_name: "charrouf",
@@ -80,8 +79,8 @@ puts "loubna's profile created ! "
 executions = 2
 executions.times do
   client = User.new(
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
+    first_name: Faker::Name.name.split[0],
+    last_name: Faker::Name.name.split[1],
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
@@ -103,18 +102,25 @@ creator_addresses = [
   "ave Mohammed v, Rabat",
   "Bd de Fes, Casablanca 20250"
 ]
-creator_addresses.each do |address|
+creator_photos = [
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555610/lensens%20/photographe/ben-parker-OhKElOkQ3RE-unsplash_surdve.jpg",
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555599/lensens%20/photographe/Photographer_F3_yf3v5o.jpg",
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg",
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg"
+]
+creator_addresses.each_with_index do |address, index|
   creator = User.new(
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
+    first_name: Faker::Name.name.split[0],
+    last_name: Faker::Name.name.split[1],
     bio: Faker::Lorem.sentence(word_count: 5),
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
     phone_number: Faker::Number,
-    address: "29,rue gauthier Casablanca"
+    address: address
   )
-  random_creator = URI.open("https://picsum.photos/200")
+  random_creator = URI.open(creator_photos[index])
   creator.photo.attach(io: random_creator, filename: 'salma.png', content_type: 'image/png')
   creator.save!
   user_role = UserRole.create!(user: creator, role: [filmmaker, photographer].sample)
