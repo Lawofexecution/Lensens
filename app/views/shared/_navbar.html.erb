@@ -1,28 +1,30 @@
 
-<div class="navbar navbar-expand-sm navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-lewagon" style="z-index:9999">
 
   <nav>
-    <label for="toggle-1" class="btn">
+    <div class="d-flex align-items-center">
+    <label for="toggle-1" style="height:39px" class="btn">
       <span></span>
       <span></span>
       <span></span>
     </label>
 
-    <input type="checkbox" id="toggle-1">
+    <%= link_to root_path, class:"navbar-brand"  do %>
 
-    <ul class="menu">
-      <a href="#"><li>about</li></a>
-      <a href="#"><li>features</li></a>
-      <a href="#"><li>contact</li></a>
-      <a href="#"><li>home</li></a>
-    </ul>
-
-  </nav>
-    <a class="navbar-brand" href="#">
       <div class="logo">
         <%= image_tag "logo.png" %>
       </div>
-    </a>
+    <% end %>
+    </div>
+    <input type="checkbox" id="toggle-1">
+
+    <ul class="menu">
+      <a href="about"><li>about us</li></a>
+      <a href="contact"><li>contact</li></a>
+      <a href="home"><li>home</li></a>
+    </ul>
+
+  </nav>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

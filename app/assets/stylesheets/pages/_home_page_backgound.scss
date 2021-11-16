@@ -42,7 +42,6 @@ $overlay_pattern: 'https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlay
 
 /* Other stuff */
 body {
-	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	line-height: 1.4;
 	color: #666;
@@ -60,18 +59,19 @@ a {
     clear: both;
 }
 .page-width {
+  color:#ffffff;
 	width: 92%;
 	max-width: 960px;
 	margin: 0 auto;
-  padding-top: 10rem;
+  padding-top: 4rem;
   // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  display: flex;
+  //  justify-content: center;
+  //  align-items: center;
 }
 #header {
 	background: #2c2d33;
