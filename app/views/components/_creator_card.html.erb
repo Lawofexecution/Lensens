@@ -1,15 +1,13 @@
- <div class="col-sm-4 mt-4">
+ <div class="col-4">
   <%= link_to user_path(creator) do %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 img-container">
-          <%= cl_image_tag creator.photo.key %>
-        </div>
-        <div class="col-sm-12">
-          <div class="card-infos">
-            <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
-            <p><%= truncate(creator.bio, length: 150) %></p>
-          </div>
+    <div class="row">
+      <div class="col-sm-12 img-container">
+        <%= cl_image_tag creator.photo.key,height: 300,width: 320, crop: :fill %>
+      </div>
+      <div class="col-sm-12">
+        <div class="card-infos ml-4 mr-4">
+          <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
+          <p><%= truncate(creator.bio, length: 150) %></p>
         </div>
       </div>
     </div>

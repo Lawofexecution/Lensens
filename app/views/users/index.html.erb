@@ -1,8 +1,8 @@
-<div class= "container ">
-  <h1>Choisissez le meilleur créateur pour vous</h1>
+<div class= "container">
+  <h1 class="index-title">Choisissez le meilleur créateur pour vous</h1>
   <div class ="home-container mt-12">
 
-    <div>
+    <div class="pr-4">
       <%= simple_form_for :index, method: :get, html: { class: "search-form" } do |f| %>
         <h2>Filtrer par:</h2>
         <div class="search-bar">
@@ -21,7 +21,7 @@
 
     <div>
       <div id="map"
-        style="width: 465px; height: 400px;"
+        style="width: 610px; height: 400px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -31,7 +31,20 @@
   <div class="container">
     <div class="row">
       <% @creators.each do |creator| %>
-       <%= render "components/creator_card",creator: creator %>
+        <%#= render "components/creator_card",creator: creator %>
+          <div class="col-4 p-0">
+            <%= link_to user_path(creator) do %>
+              <div class="creator-card">
+                <div class="img-container">
+                  <%= cl_image_tag creator.photo.key,height: 300,width: 300, crop: :fill %>
+                </div>
+                <div class="card-infos">
+                  <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
+                  <p><%= truncate(creator.bio, length: 150) %></p>
+                </div>
+              </div>
+            <% end  %>
+          </div>
       <% end  %>
     </div>
   </div>

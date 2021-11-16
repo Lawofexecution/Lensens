@@ -105,14 +105,15 @@ creator_addresses = [
   "Bd de Fes, Casablanca 20250"
 ]
 creator_photos = [
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
+ "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056254/lensens%20/photographe/marlon-alves-HY7zfjtQz3U-unsplash_tyidjx.jpg",
+ "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056268/lensens%20/photographe/jakob-owens-4jskfbcX--c-unsplash_s1olrk.jpg",
+ "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056262/lensens%20/photographe/marcus-wallis-w5Fyg7SWNFI-unsplash_izszx8.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555610/lensens%20/photographe/ben-parker-OhKElOkQ3RE-unsplash_surdve.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555599/lensens%20/photographe/Photographer_F3_yf3v5o.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg"
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg",
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636649450/production/epjry3o84erytvvcw4z40kui0qy4.jpg",
+ "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636649451/production/osflwugbl9a47m1wp8msrfyw9w8j.jpg"
 ]
 creator_addresses.each_with_index do |address, index|
   creator = User.new(
