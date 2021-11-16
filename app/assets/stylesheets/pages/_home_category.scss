@@ -31,10 +31,10 @@ html { font-size: 62.5%; }
 }
 
 .inside-page__heading--city,
-.card-front__text-view--city { color: #ff62b2; }
+.card-front__text-view--city { color: #7340CF; }
 
 .inside-page__heading--ski,
-.card-front__text-view--ski { color: #2aaac1; }
+.card-front__text-view--ski { color: #ff62b2; }
 
 
 .inside-page__heading--camping,
@@ -99,7 +99,7 @@ html { font-size: 62.5%; }
 
 .inside-page__btn--city {
   border-color: #ff40a1;
-  color: #ff40a1;
+  color: #7340CF  ;
 }
 
 .inside-page__btn--city::before {
@@ -228,7 +228,7 @@ html { font-size: 62.5%; }
   position: absolute;
   top: 0;
   width: 100%;
-  height: 24rem;
+  height: 20rem
 }
 
 /* Styling for the front side of the flip card */
@@ -236,7 +236,7 @@ html { font-size: 62.5%; }
 /* container for the front side */
 .card-front {
   background-color: #fafbfa;
-  height: 24rem;
+  height: 20rem;
   width: 15rem;
 }
 
@@ -255,7 +255,7 @@ html { font-size: 62.5%; }
   background: linear-gradient(
     to bottom,
     #9b75e2,
-    #7340CF
+    #7340CF,
 
   );
 }
