@@ -27,7 +27,6 @@ client = User.new(
   first_name: 'yassine',
   bio: Faker::Lorem.sentence(word_count: 100),
   last_name: 'daoudi',
-   bio: Faker::Lorem.sentence(word_count: 5),
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
