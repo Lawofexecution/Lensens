@@ -27,7 +27,6 @@ client = User.new(
   first_name: 'yassine',
   bio: Faker::Lorem.sentence(word_count: 100),
   last_name: 'daoudi',
-   bio: Faker::Lorem.sentence(word_count: 5),
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
@@ -65,7 +64,7 @@ file_l = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555622
 creator = User.new(
   first_name: "loubna",
   last_name: "charrouf",
-  bio: Faker::Lorem.sentence(word_count: 5),
+  bio: Faker::Lorem.sentence(word_count: 100),
   email: "lc@lensens.ma",
   password: "password",
   password_confirmation: "password",
@@ -84,6 +83,7 @@ executions.times do
     first_name: Faker::Name.name.split[0],
     last_name: Faker::Name.name.split[1],
     email: Faker::Internet.email,
+    bio: Faker::Lorem.sentence(word_count: 100),
     password: "password",
     password_confirmation: "password",
     phone_number: Faker::Number,
@@ -117,7 +117,7 @@ creator_addresses.each_with_index do |address, index|
   creator = User.new(
     first_name: Faker::Name.name.split[0],
     last_name: Faker::Name.name.split[1],
-    bio: Faker::Lorem.sentence(word_count: 5),
+    bio: Faker::Lorem.sentence(word_count: 100),
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",

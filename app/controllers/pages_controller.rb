@@ -5,5 +5,6 @@ class PagesController < ApplicationController
     trending_photographers = Role.where(title: "Photographe").first.users.take(2)
     trending_filmmakers = Role.where(title: "Cinéaste").first.users.take(3)
     @trending_creators = trending_photographers + trending_filmmakers
+    
   end
 end

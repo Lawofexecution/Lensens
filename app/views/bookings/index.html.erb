@@ -1,13 +1,37 @@
-<% @bookings.each do |booking| %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
 
-  <h1>Creator info</h1>
-  <%= booking.creator.first_name %>
-  <%= booking.creator.last_name %>
+<table class="table">
+  <% @bookings.each do |booking| %>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">booking info</th>
 
-  <h1>Client info</h1>
-  <%= booking.client.first_name %>
-  <%= booking.client.first_name %>
 
-<% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">le nom de créateur</th>
+        <td>
+         <%= booking.creator.first_name %>
+         <%= booking.creator.last_name %>
+        </td>
+
+      </tr>
+      <tr>
+        <th scope="row">le nom de client </th>
+        <td>
+         <%= booking.client.first_name %>
+         <%= booking.client.last_name %>
+        </td>
+
+      </tr>
+      <tr>
+        <th scope="row"> la date </th>
+        <td colspan="2">
+        <%= booking.start_date %>
+         <%= booking.end_date %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
