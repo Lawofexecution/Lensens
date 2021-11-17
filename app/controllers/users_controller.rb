@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def show
     @creator = User.find(params[:id])
-    creators_ids = Role.left_outer_joins(:users).where("title = 'Filmmaker' or title='Photographer'").pluck(:user_id)
+    creators_ids = Role.left_outer_joins(:users).where("title = 'Photographe' or title='Cinéaste'").pluck(:user_id)
     @creators = User.where(id: creators_ids)
     @booking = Booking.new
   end
