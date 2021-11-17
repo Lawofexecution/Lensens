@@ -18,7 +18,7 @@ const initFlatpickr = function () {
           endDateInput.disabled = true;
         }
         let minDate = selectedDates[0];
-        minDate.setDate(minDate.getDate() + 1);
+        minDate.setDate(minDate.getDate());
         endDateCalendar.set('minDate', minDate);
         endDateInput.disabled = false;
       }

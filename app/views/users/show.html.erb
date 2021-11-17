@@ -1,12 +1,12 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-sm-12 ">
+    <div class="col-sm-12 p-0">
       <%= render "components/carousel" %>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid mb-5">
 
   <div class="row info-row">
     <div class="col-sm-8 ">
@@ -19,7 +19,15 @@
             <span class="badge badge-success p-2 m-2">Fashion</span>
             <span class="badge badge-success p-2 m-2">Street</span>
           </div>
-
+          <div class="col-sm-12 ">
+            <%= render "components/avatar",key: @creator.photo.key %>
+            <%= @creator.short_name %>
+          </div>
+          <div class="col-sm-12">
+            <p class="bio">
+              <%= @creator.bio %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -32,4 +40,58 @@
       <% end %>
     </div>
   </div>
+</div>
+<div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active my-carousel-item ">
+      <%= render "components/avatar" ,key: @users.first.photo.key %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Zinab</h5>
+        <p>J'utilise principalement lense lorsque j'ai besoin d'un vidéaste indépendant pour un projet ou un événement que je coordonne. Ils ont une énorme base de données de vidéastes qualifiés qui offrent une large gamme de prix et de services. Je ne peux pas les recommander assez!</p>
+        <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <div class="carousel-item my-carousel-item  ">
+       <%= render "components/avatar",key: @users.second.photo.key %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Le Wagon Casablanca</h5>
+        <p>Quelle super application ! Lense nous a aidé à trouver le photographe parfait pour chaque événement. La plateforme est vraiment facile à utiliser et vous pouvez être mis en relation avec des photographes de votre région en quelques minutes. Nous la recommandons à tous ceux qui recherchent un bon photographe !</p>
+        <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <div class="carousel-item my-carousel-item ">
+       <%= render "components/avatar",key: @users.last.photo.key %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Zakaria</h5>
+        <p>J'utilise Lense pour trouver le meilleur vidéaste pour mes besoins depuis plus de 6 mois maintenant. C'est le moyen le plus simple de trouver quelqu'un qui répond à vos critères spécifiques, que ce soit le prix ou l'emplacement. Je suis très heureux de l'aide que cela m'a apportée et je le recommande !
+.</p>
+        <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-target="#carousel-testimonials" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carousel-testimonials" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
 </div>

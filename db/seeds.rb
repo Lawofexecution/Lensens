@@ -27,7 +27,6 @@ client = User.new(
   first_name: 'yassine',
   bio: Faker::Lorem.sentence(word_count: 100),
   last_name: 'daoudi',
-   bio: Faker::Lorem.sentence(word_count: 5),
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
@@ -101,8 +100,7 @@ creator_addresses = [
   "400 bd roudani casablanca",
   " Rabat 10106",
   "rue camellia rabat",
-  "ave Mohammed v, Rabat",
-  "Bd de Fes, Casablanca 20250"
+  "ave Mohammed v, Rabat"
 ]
 creator_photos = [
  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056254/lensens%20/photographe/marlon-alves-HY7zfjtQz3U-unsplash_tyidjx.jpg",
@@ -110,11 +108,10 @@ creator_photos = [
  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056262/lensens%20/photographe/marcus-wallis-w5Fyg7SWNFI-unsplash_izszx8.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555479/lensens%20/photographe/Photographer_H1_tu2lqc.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555610/lensens%20/photographe/ben-parker-OhKElOkQ3RE-unsplash_surdve.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg",
   "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg",
-  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636649450/production/epjry3o84erytvvcw4z40kui0qy4.jpg",
- "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636649451/production/osflwugbl9a47m1wp8msrfyw9w8j.jpg"
+  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555599/lensens%20/photographe/Photographer_F3_yf3v5o.jpg",
 ]
+
 creator_addresses.each_with_index do |address, index|
   creator = User.new(
     first_name: Faker::Name.name.split[0],
@@ -135,6 +132,7 @@ end
 
 companies = Role.where(title: "Company").first.users
 photographers = Role.where(title: "Photographer").first.users
+
 photographers.each do |the_photographer|
   4.times do
     project = Project.create!(
