@@ -13,16 +13,23 @@
         <div class="d-flex">
           <%=f.input :role, as: :radio_buttons, collection: ["Photographe", "Cinéaste"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
         </div>
-        <div class="d-flex">
-          <%=f.input :price_per_day, as: :radio_buttons, collection: ["< 1000", "1000 - 5000"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+        <div>
+        <%=f.input :category, as: :radio_buttons, collection: ["Portrait", "Corporate","Drone"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
         </div>
+        <div class="d-flex">
+          <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Prix (MAD/Jour)</legend>
+            <%=f.input :price_per_day, as: :radio_buttons, collection: ["2000", "3000","5000"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+          </fieldset>
+        </div>
+
         <%= f.button :submit, "Recherchez", class: "custom-btn" %>
       <% end %>
     </div>
 
     <div class="col-9">
       <div id="map"
-        style="width: 92%; height: 400px;"
+        style="width: 92%; height: 600px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -39,7 +46,9 @@
             <%= link_to user_path(creator) do %>
               <div class="creator-card">
                 <div class="img-container">
-                  <%= cl_image_tag creator.photo.key,height: 300,width: 300, crop: :fill %>
+                  <% if creator.photo.attached? %>
+                    <%= cl_image_tag creator.photo.key,height: 300,width: 300, crop: :fill %>
+                  <% end %>
                 </div>
                 <div class="card-infos">
                   <h2><%= creator.first_name %> <%= creator.last_name %> </h2>

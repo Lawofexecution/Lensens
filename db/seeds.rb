@@ -10,8 +10,8 @@ User.destroy_all
 
 company = Role.create!(title: "Company")
 individual = Role.create!(title: "Individual")
-filmmaker = Role.create!(title: "Filmmaker")
-photographer = Role.create!(title: "Photographer")
+filmmaker = Role.create!(title: "Cinéaste")
+photographer = Role.create!(title: "Photographe")
 
 puts "#{company.title} created "
 puts "#{individual.title} created"
@@ -132,7 +132,7 @@ creator_addresses.each_with_index do |address, index|
 end
 
 companies = Role.where(title: "Company").first.users
-photographers = Role.where(title: "Photographer").first.users
+photographers = Role.where(title: "Photographe").first.users
 
 photographers.each do |the_photographer|
   4.times do
