@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active my-carousel-item ">
 
-      <%= render "components/avatar", image: "https://t4.ftcdn.net/jpg/01/51/99/39/240_F_151993994_mmAYzngmSbNRr6Fxma67Od3WHrSkfG5I.jpg" %>
+      <%= render "components/avatar",key: @trending_photographers.first.photo.key %>
 
       <div class="carousel-caption d-none d-md-block">
         <h5>Zinab</h5>
@@ -21,8 +21,7 @@
     </div>
     <div class="carousel-item my-carousel-item  ">
 
-       <%= render "components/avatar", image: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-b6124eb974be375884558e4464efce48a9b5664f18422768156364363ecdd1fc.png" %>
-
+      <%= render "components/avatar",key: @trending_photographers.first.photo.key %>
       <div class="carousel-caption d-none d-md-block">
         <h5>Le Wagon Casablanca</h5>
         <p>Quelle super application ! Lense nous a aidé à trouver le photographe parfait pour chaque événement. La plateforme est vraiment facile à utiliser et vous pouvez être mis en relation avec des photographes de votre région en quelques minutes. Nous la recommandons à tous ceux qui recherchent un bon photographe !</p>
@@ -34,7 +33,7 @@
       </div>
     </div>
     <div class="carousel-item my-carousel-item ">
-       <%= render "components/avatar",image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/1024px-Pierre-Person.jpg" %>
+       <%= render "components/avatar",key: @trending_filmmakers.second.photo.key %>
       <div class="carousel-caption d-none d-md-block">
         <h5>Zakaria</h5>
         <p>J'utilise Lense pour trouver le meilleur vidéaste pour mes besoins depuis plus de 6 mois maintenant. C'est le moyen le plus simple de trouver quelqu'un qui répond à vos critères spécifiques, que ce soit le prix ou l'emplacement. Je suis très heureux de l'aide que cela m'a apportée et je le recommande !
