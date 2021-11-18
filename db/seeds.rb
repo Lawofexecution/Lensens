@@ -23,7 +23,7 @@ puts "Creating yassine's profile"
 
 file_y = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg')
 
-client = User.new(
+yassine = User.new(
   first_name: 'yassine',
   bio: Faker::Lorem.sentence(word_count: 100),
   last_name: 'daoudi',
@@ -33,16 +33,16 @@ client = User.new(
   phone_number: '0661234432',
   address: "29,rue constantine Casablanca"
 )
-client.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
-client.save!
-UserRole.create!(user: client, role: photographer)
+yassine.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
+yassine.save!
+UserRole.create!(user: yassine, role: photographer)
 
 puts "Yassine's profile created ! "
 
 puts "Creating salma's profile"
 
 file_s = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555618/lensens%20/photographe/Salma_Clr_Le_wagon_wtgbic.jpg')
-creator = User.new(
+salma = User.new(
   first_name: "salma",
   last_name: "khattabi",
   bio: Faker::Lorem.sentence(word_count: 100),
@@ -52,9 +52,9 @@ creator = User.new(
   phone_number: "07700000101",
    address: "29,rue zerktouni Casablanca"
 )
-creator.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
-creator.save!
-user_role = UserRole.create!(user: creator, role: individual)
+salma.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
+salma.save!
+user_role = UserRole.create!(user: salma, role: individual)
 
 puts "Salma's profile created ! "
 

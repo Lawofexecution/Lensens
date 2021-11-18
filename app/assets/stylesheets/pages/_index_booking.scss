@@ -1,0 +1,71 @@
+.booking-card{
+  background-color: white;
+  width: 614px;
+  box-shadow: 3px 5px 20px rgba(230 , 230 , 231 , 0.6);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  padding: 1rem 1.3rem;
+  position: relative;
+
+  i{
+    color: #7340CF;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.booking-cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.booking-photo{
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 90px;
+    height: 90px;
+    border: 5px solid white;
+    border-radius: 9999px;
+    position: relative;
+  }
+
+}
+
+.booking-name{
+  font-style: ITALIC;
+  font-size: 1.4rem;
+}
+
+.booking-status{
+  color: white;
+  background-color: gray;
+  font-size: 1rem;
+  position: absolute;
+  left: 33px;
+  top: 33px;
+  padding: 8px 10px;
+}
+
+.booking-status-left{
+  color: white;
+  background-color: rgb(219, 82, 82);
+  font-size: 1rem;
+  position: absolute;
+  left: 33px;
+  top: 33px;
+  padding: 8px 10px;
+}
+
+.booking-status-right{
+  color: white;
+  background-color: rgb(82, 219, 82);
+  font-size: 1rem;
+  position: absolute;
+  left: 465px;
+  top: 33px;
+  padding: 8px 10px;
+}
