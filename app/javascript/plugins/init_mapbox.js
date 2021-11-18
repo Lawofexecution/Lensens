@@ -13,9 +13,14 @@ const initMapbox = () => {
 
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    mapboxgl.setRTLTextPlugin(
+      'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+      null,
+      true // Lazy load the plugin
+    );
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/navigation-day-v1'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
