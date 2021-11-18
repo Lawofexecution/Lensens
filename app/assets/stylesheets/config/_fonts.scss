@@ -1,13 +1,14 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 // Define fonts for body and headers
-$body-font: "Gilroy";
-$headers-font: "Gilroy";
-
 @font-face {
   font-family: "Gilroy";
   src: font-url('Gilroy-Light.otf') format("truetype");
 }
+
+$body-font: "Gilroy";
+$headers-font: "Gilroy";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
