@@ -53,6 +53,9 @@
                 <div class="card-infos">
                   <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
                   <p><%= truncate(creator.bio, length: 150) %></p>
+                  <div class="d-flex  profil-rating-users">
+                    <%= render "components/rating",star:[3,4,5].sample  %>
+                  </div>
                 </div>
               </div>
             <% end  %>
