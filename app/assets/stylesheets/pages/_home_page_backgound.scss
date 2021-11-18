@@ -28,16 +28,22 @@ $overlay_pattern: 'https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlay
 	position: relative;
 	text-align: center;
 	color: #FFF;
-  margin: 150px 0;
+  margin-bottom: 60px;
 	text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 .video-hero--content h2 {
 	font-size: 34px;
 	margin: 0 0 10px;
 }
-.video-hero--content p {
-	font-size: 20px;
-	margin: 0;
+
+.video-hero--content h3 {
+  font-size: 1.45rem;
+  margin-bottom: 4rem;
+}
+
+.video-hero--content h1 {
+	font-size: 40px;
+	margin: 2rem;
 }
 
 /* Other stuff */
@@ -63,7 +69,7 @@ a {
 	width: 92%;
 	max-width: 960px;
 	margin: 0 auto;
-  padding-top: 4rem;
+  margin-top: 8rem;
   // position: absolute;
   //  top: 0;
   //  left: 0;
@@ -109,9 +115,14 @@ a:hover .subtitle {
  */
 .jquery-background-video-wrapper {
 	position: relative;
-	overflow: hidden;
 	background-position: center center;
 	background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 	    	background-size: cover;
@@ -124,8 +135,8 @@ a:hover .subtitle {
 	height: auto;
 	top: 50%;
 	left: 50%;
-	-o-object-fit: contain;
-	   object-fit: contain;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	-webkit-transform: translate(-50%,-50%);
 	   -moz-transform: translate(-50%,-50%);
 	    -ms-transform: translate(-50%,-50%);
@@ -188,15 +199,11 @@ a:hover .subtitle {
 .jquery-background-video-pauseplay.pause:after {
 	left: 10px;
 }
-.home_buttons{
- margin-top: 5rem;
 
-}
-.btn-ghost {
-  font-size: 2.1rem;
+.btn-ghost-one {
+  font-size: 1.3rem;
   color:#ffff;
-  background-color: #7340CF;
-  border: 1px solid #4A4A4A;
+  background-color: #FD727E;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -204,19 +211,45 @@ a:hover .subtitle {
   transition: opacity 0.3s ease;
 }
 
-.btn-ghost:hover {
+.btn-ghost-one:hover {
   opacity: 1;
+  background-color: #7340CF;
   color: #FFF;
 }
-.home-page-qst {
-  h3 {
-  width: 500px;
-  margin-bottom: 26px;
-  color: rgb(231, 228, 228);
-  }
+
+.btn-ghost-two {
+  font-size: 1.3rem;
+  color:#ffff;
+  background-color: #7340CF;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-two:hover {
+  opacity: 1;
+  background-color: #FD727E;
+  color: #FFF;
 }
 
 img.lightbulb {
   filter: invert(1);
   margin: 3rem;
+}
+
+.hero-call-to-actions {
+
+  div {
+    width: 781px;
+    margin: 20px;
+  }
+}
+
+.hero-container {
+  color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 8rem;
 }

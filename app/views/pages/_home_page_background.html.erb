@@ -6,25 +6,28 @@
     <source src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.ogv" type="video/ogg">
   </video>
 	  <div class="video-overlay"></div>
-  	<div class="page-width">
+  	<div class="hero-container">
 		    <div class="video-hero--content">
-          <h2>Lensens</h2>
-          <p>IMMORTALISONS  VOS MOMENTS  ENSEMBLES !</p>
-          <div class=home_buttons>
-            <%= link_to "je suis client", users_path, class: "btn btn-ghost" %>
-            <%= link_to "je suis photographe", users_path, class: "btn btn-ghost" %>
+          <h1>IMMORTALISONS  VOS MOMENTS <br>ENSEMBLES !</h1>
+
+          <div class="d-flex hero-call-to-actions">
+            <div>
+              <h3>Vous êtes photographes ou vidéastes à la recherche <br>de nouveaux projets ?</h3>
+              <%= link_to "je suis photographe", users_path, class: "btn btn-ghost-one" %>
+            </div>
+
+            <div>
+              <h3>Vous êtes particuliers ou entreprises à la recherche du meilleur créateur <br>pour vos missions?</h3>
+              <%= link_to "je suis client", users_path, class: "btn btn-ghost-two" %>
+            </div>
           </div>
+
     		</div>
   	</div>
 </div>
 <!-- End video hero -->
 <div id="content" class="py-3">
 	  <div class="page-width">
-        <div class="d-flex home-page-qst">
-    		 <h3> Vous êtes photographes ou vidéastes à la recherche de nouveaux projets ?</h3>
-		     <h3>Vous êtes particuliers ou entreprises à la recherche du meilleur créateur pour vos missions?</h3>
-        </div>
-        <%= image_tag "lightbulb.png", height: 200, class: "lightbulb" %>
-		    <h2>Si oui, Lensens est pour vous !</h2>
+      <%= image_tag "lightbulb.png", height: 200, class: "lightbulb" %>
 	  </div>
 </div>
