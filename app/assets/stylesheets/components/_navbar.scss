@@ -5,6 +5,7 @@
   background-color: #aaaaaa77;
   max-height: 78px;
   top:0;
+  padding: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,6 +23,10 @@
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.logo {
+  margin-left: 12px;
 }
 
 /* Hides / Positions Checkbox & label */
@@ -58,7 +63,7 @@ ul.menu {
   display: none;
   position: absolute;
   width: 100%;
-  background-color: #C43C9F;
+  background-color:rgba(253, 114, 126, 0.6);
   margin: 0 auto;
   padding: 0;
   /*z-index: 0;*/
@@ -70,7 +75,7 @@ ul.menu a{
 
 ul.menu a:hover {
   display: block;
-  background:#f874d5;
+  background:rgba(196, 60, 159, 0.5);
   padding:10px 0 10px 0
 }
 

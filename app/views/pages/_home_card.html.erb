@@ -1,6 +1,5 @@
 <% fakebios= "3 années d’alternances en tant que vidéaste, je poursuis mon activité d’indépendant","j’ai été réalisateur - truquiste pendant 8 ans à BFM Business TV.","Cinéaste Indépendant. Membre du Conservatoire Libre du Cinéma Français","Transformer les vécus individuels en une histoire commune pour le cinéma.","Stagiaire Cinéaste sur les plateaux de tournage de France télévision."%>
- <h1 class="home_titles"> les 6 Meilleurs créateurs
- du mois</h1>
+ <h1 class="home_titles">Les 6 meilleurs créateurs du mois</h1>
 <div class="d-flex mb-3 my-container py-5 justify-content-center">
   <% @trending_creators.each_with_index do |creator,i| %>
     <%= link_to user_path(creator) do %>

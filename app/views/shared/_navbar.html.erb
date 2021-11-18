@@ -2,7 +2,7 @@
 <div class="navbar navbar-expand-sm navbar-lewagon" style="z-index:9999">
 
   <nav>
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center" style="height: 84px;">
     <label for="toggle-1" style="height:39px" class="btn">
       <span></span>
       <span></span>
@@ -17,12 +17,11 @@
     <% end %>
     </div>
     <input type="checkbox" id="toggle-1">
-
     <ul class="menu">
-      <a href="#about"><li>A propos de nous</li></a>
+      <a href="#about"><li>À propos de nous</li></a>
       <a href="#contact"><li>contactez-nous</li></a>
       <%= link_to root_path do %>
-       <li> home </li>
+       <li> Accueil </li>
       <% end %>
     </ul>
 
@@ -36,7 +35,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: "margin-right: 12px" %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>

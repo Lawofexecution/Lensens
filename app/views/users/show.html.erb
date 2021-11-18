@@ -10,14 +10,14 @@
     <div class="col-sm-8 ">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 p-5">
+          <div class="col-sm-12 ">
+            <%= render "components/user_show_avatar", key: @creator.photo.key %>
+            <%= @creator.short_name %>
+          </div>
+          <div class="col-sm-12 p-1">
             <span class="badge badge-success p-2 m-2">Portrait</span>
             <span class="badge badge-success p-2 m-2">Corporate</span>
             <span class="badge badge-success p-2 m-2">Drone</span>
-          </div>
-          <div class="col-sm-12 ">
-            <%= render "components/avatar", key: @creator.photo.key %>
-            <%= @creator.short_name %>
           </div>
           <div class="col-sm-12">
             <p class="bio">
@@ -27,12 +27,12 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 ">
+    <div class="col-sm-4 d-flex align-items-center">
     <span style="display:none" class="widget-content" data-unavailable="<%= @creator.unavailable_dates.to_json %>" ></span>
-      <%= simple_form_for([@creator,@booking]) do |f| %>
-        <%= f.input :start_date, as: :string, placeholder: "De :", wrapper_html: { class: "inline_field_wrapper" } %>
-        <%= f.input :end_date, as: :string, placeholder: "À :", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
-        <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+      <%= simple_form_for([@creator,@booking], html: {class: "booking-form"}) do |f| %>
+        <%= f.input :start_date, as: :string, placeholder: "De :", wrapper_html: { class: "inline_field_wrapper" }, label: "Date de début" %>
+        <%= f.input :end_date, as: :string, placeholder: "À :", disabled: true, wrapper_html: { class: "inline_field_wrapper" }, label: "Date de fin" %>
+        <%= f.submit "Réservez", class: "btn custom-btn btn-lg btn-block btn-booking" %>
       <% end %>
     </div>
   </div>
