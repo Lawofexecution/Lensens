@@ -1,37 +1,18 @@
+<div class="container mt-5">
+  <div class="booking-cards ">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card">
+       <span class="badge rounded-pill booking-status">pending</span>
+       <div class="booking-photo" >
+        <%= cl_image_tag booking.creator.photo.key  %>
+       </div>
+        <p class="booking-name"><%= booking.creator.first_name %> <%= booking.creator.last_name %></p>
+        <div class="d-flex justify-content-between">
+          <p> <i class="fas fa-search-location"></i><br><%=booking.creator.address %></p>
+          <p><i class="fas fa-calendar-alt"></i><br><%= booking.start_date.strftime("%b %e - %l:%M %p") %> - <%= booking.end_date.strftime("%b %e - %l:%M %p") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<table class="table">
-  <% @bookings.each do |booking| %>
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">booking info</th>
-
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">le nom de créateur</th>
-        <td>
-         <%= booking.creator.first_name %>
-         <%= booking.creator.last_name %>
-        </td>
-
-      </tr>
-      <tr>
-        <th scope="row">le nom de client </th>
-        <td>
-         <%= booking.client.first_name %>
-         <%= booking.client.last_name %>
-        </td>
-
-      </tr>
-      <tr>
-        <th scope="row"> la date </th>
-        <td colspan="2">
-        <%= booking.start_date %>
-         <%= booking.end_date %></td>
-      </tr>
-    </tbody>
-  <% end %>
-</table>
+</div>
