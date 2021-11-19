@@ -30,6 +30,7 @@
   padding-bottom: 32px;
   padding-left: 160px;
   padding-right: 160px;
+  color: aliceblue;
 }
 
 .new_booking{
@@ -70,6 +71,23 @@
   margin-left: 82px;
   margin-top: 42px;
 }
-.badge{
-  color: rgba(255, 255, 255, 0.8);
+.choix{
+  font-size: 20px;
+  width: 120px;
+  font-weight: bold;
+  border-radius: 5px;
+
 }
+.badge-portrait{
+ background-color:#F6DCEB ;
+  }
+  .badge-corpo{
+ background-color: violet;
+  }
+ .badge-drone{
+ background-color: #F7DDEB;
+ }
+
+ .categories {
+  margin-top: 10px;
+ }
