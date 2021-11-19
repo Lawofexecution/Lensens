@@ -77,7 +77,7 @@ user_role = UserRole.create!(user: creator, role: photographer)
 
 puts "loubna's profile created ! "
 
-executions = 2
+executions = 6
 executions.times do
   client = User.new(
     first_name: Faker::Name.name.split[0],
@@ -99,9 +99,9 @@ creator_addresses = [
   "rue d'arcachon casablanca 20500",
   "90 bd de la corniche casabalanca",
   "400 bd roudani casablanca",
-  " Rabat 10106",
+  "rue berlin rabat",
   "rue camellia rabat",
-  "ave Mohammed v, Rabat"
+  "avenue Mohammed v, Rabat"
 ]
 creator_photos = [
  "https://res.cloudinary.com/dncwxfhjw/image/upload/v1637056254/lensens%20/photographe/marlon-alves-HY7zfjtQz3U-unsplash_tyidjx.jpg",
@@ -131,19 +131,19 @@ creator_addresses.each_with_index do |address, index|
   puts "#{creator.first_name} is a #{user_role.role.title}"
 end
 
-companies = Role.where(title: "Company").first.users
-photographers = Role.where(title: "Photographe").first.users
+# companies = Role.where(title: "Company").first.users
+# photographers = Role.where(title: "Photographe").first.users
 
-photographers.each do |the_photographer|
-  4.times do
-    project = Project.create!(
-      name: Faker::Company.name,
-      description: Faker::Lorem.sentence(word_count: 3),
-      category: ['portrait', 'landscape'].sample,
-      start_date: Faker::Date.backward(days: 20),
-      end_date: Faker::Date.backward(days: 19),
-      client: companies.sample,
-      creator: the_photographer)
-    puts "#{project.name} has been created for #{the_photographer.first_name}"
-  end
-end
+# photographers.each do |the_photographer|
+#   4.times do
+#     project = Project.create!(
+#       name: Faker::Company.name,
+#       description: Faker::Lorem.sentence(word_count: 3),
+#       category: ['portrait', 'landscape'].sample,
+#       start_date: Faker::Date.backward(days: 20),
+#       end_date: Faker::Date.backward(days: 19),
+#       client: companies.sample,
+#       creator: the_photographer)
+#     puts "#{project.name} has been created for #{the_photographer.first_name}"
+#   end
+# end
