@@ -10,7 +10,7 @@ User.destroy_all
 
 company = Role.create!(title: "Company")
 individual = Role.create!(title: "Individual")
-filmmaker = Role.create!(title: "Cinéaste")
+filmmaker = Role.create!(title: "Vidéaste")
 photographer = Role.create!(title: "Photographe")
 
 puts "#{company.title} created "
@@ -24,9 +24,9 @@ puts "Creating yassine's profile"
 file_y = URI.open('https://res.cloudinary.com/dncwxfhjw/image/upload/v1636555369/lensens%20/photographe/Yassine_D_1_smnrfv.jpg')
 
 yassine = User.new(
-  first_name: 'yassine',
+  first_name: 'Yassine',
   bio: Faker::Lorem.sentence(word_count: 100),
-  last_name: 'daoudi',
+  last_name: 'Daoudi',
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
@@ -35,7 +35,7 @@ yassine = User.new(
 )
 yassine.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
 yassine.save!
-UserRole.create!(user: yassine, role: photographer)
+UserRole.create!(user: yassine, role: individual)
 
 puts "Yassine's profile created ! "
 
@@ -54,7 +54,7 @@ salma = User.new(
 )
 salma.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
 salma.save!
-user_role = UserRole.create!(user: salma, role: individual)
+user_role = UserRole.create!(user: salma, role: photographer)
 
 puts "Salma's profile created ! "
 
@@ -73,7 +73,7 @@ creator = User.new(
 )
 creator.photo.attach(io: file_l, filename: 'loubna.png', content_type: 'image/png')
 creator.save!
-user_role = UserRole.create!(user: creator, role: filmmaker)
+user_role = UserRole.create!(user: creator, role: photographer)
 
 puts "loubna's profile created ! "
 

@@ -6,7 +6,7 @@
        <div class="booking-photo" >
         <%= cl_image_tag booking.creator.photo.key  %>
        </div>
-        <p class="booking-name"><%= booking.creator.first_name %> <%= booking.creator.last_name %></p>
+        <p class="booking-name"><%= booking.creator.short_name %> </p>
         <div class="d-flex justify-content-between">
           <p> <i class="fas fa-search-location"></i><br><%=booking.creator.address %></p>
           <p><i class="fas fa-calendar-alt"></i><br><%= booking.start_date.strftime("%b %e - %l:%M %p") %> - <%= booking.end_date.strftime("%b %e - %l:%M %p") %></p>
@@ -40,7 +40,7 @@
        <div class="booking-photo" >
         <%= cl_image_tag booking.creator.photo.key  %>
        </div>
-        <p class="booking-name"><%= booking.creator.first_name %> <%= booking.creator.last_name %></p>
+        <p class="booking-name"><%= booking.creator.short_name %> </p>
         <div class="d-flex justify-content-between">
           <p> <i class="fas fa-search-location"></i><br><%=booking.creator.address %></p>
           <p><i class="fas fa-calendar-alt"></i><br><%= booking.start_date.strftime("%b %e - %l:%M %p") %> - <%= booking.end_date.strftime("%b %e - %l:%M %p") %></p>

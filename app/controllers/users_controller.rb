@@ -2,9 +2,15 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    if params[:index].nil?
-      creators_ids = Role.left_outer_joins(:users).where("title = 'Cinéaste' or title='Photographe'").pluck(:user_id)
+    if !params[:index].nil? && (!params[:index][:role].blank? || !params[:index][:ville].blank?)
+
+      creators_ids = Role.left_outer_joins(:users).where(title: params[:index][:role]).pluck(:user_id)
       @creators = User.where(id: creators_ids)
+
+      if params[:index][:ville].blank?
+        @creators = @creators.near(params[:index][:ville], 10)
+      end
+
       @markers = @creators.geocoded.map do |creator|
         {
           lat: creator.latitude,
@@ -12,10 +18,8 @@ class UsersController < ApplicationController
         }
       end
     else
-      role_input = params[:index][:role]
-      creators_ids = Role.left_outer_joins(:users).where(title:role_input).pluck(:user_id)
+      creators_ids = Role.left_outer_joins(:users).where("title = 'Vidéaste' or title='Photographe' ").pluck(:user_id)
       @creators = User.where(id: creators_ids)
-      @creators = @creators.near(params[:index][:ville], 10)
       @markers = @creators.geocoded.map do |creator|
         {
           lat: creator.latitude,
@@ -27,7 +31,7 @@ class UsersController < ApplicationController
 
   def show
     @creator = User.find(params[:id])
-    creators_ids = Role.left_outer_joins(:users).where("title = 'Photographe' or title='Cinéaste'").pluck(:user_id)
+    creators_ids = Role.left_outer_joins(:users).where("title = 'Photographe' or title='Vidéaste'").pluck(:user_id)
     @creators = User.where(id: creators_ids)
     @booking = Booking.new
   end

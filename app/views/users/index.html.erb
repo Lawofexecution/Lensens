@@ -11,7 +11,7 @@
           <i class="fas fa-search"></i>
         </div>
         <div class="d-flex">
-          <%=f.input :role, as: :radio_buttons, collection: ["Photographe", "Cinéaste"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+          <%=f.input :role, as: :radio_buttons, collection: ["Photographe", "Vidéaste"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
         </div>
         <div>
         <%=f.input :category, as: :radio_buttons, collection: ["Portrait", "Corporate","Drone"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
@@ -51,7 +51,7 @@
                   <% end %>
                 </div>
                 <div class="card-infos">
-                  <h2><%= creator.first_name %> <%= creator.last_name %> </h2>
+                  <h2><%= creator.short_name %> </h2>
                   <p><%= truncate(creator.bio, length: 150) %></p>
                   <div class="d-flex  profil-rating-users">
                     <%= render "components/rating",star:[3,4,5].sample  %>
