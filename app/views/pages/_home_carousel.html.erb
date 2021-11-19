@@ -9,7 +9,7 @@
       <% crea = @creators.sample  %>
       <%= render "components/avatar" ,key: crea.photo.key %>
       <div class="carousel-caption d-none d-md-block">
-        <h5> <%= crea.full_name %></h5>
+        <h5> <%= crea.short_name %></h5>
         <p> <%= crea.bio %> </p>
         <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -22,7 +22,7 @@
       <% crea = @creators.sample  %>
        <%= render "components/avatar",key: crea.photo.key %>
       <div class="carousel-caption d-none d-md-block">
-        <h5> <%= crea.full_name %></h5>
+        <h5> <%= crea.short_name %></h5>
         <p> <%= crea.bio %> </p>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -35,7 +35,7 @@
       <% crea = @creators.sample  %>
       <%= render "components/avatar",key: crea.photo.key %>
       <div class="carousel-caption d-none d-md-block">
-        <h5> <%= crea.full_name %></h5>
+        <h5> <%= crea.short_name %></h5>
         <p> <%= crea.bio %> </p>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>

@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :bookings
   has_many :projects
-  has_many :roles, through: :user_roles
   has_many :user_roles
+  has_many :roles, through: :user_roles
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   def full_name
