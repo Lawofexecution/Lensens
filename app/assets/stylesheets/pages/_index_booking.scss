@@ -52,20 +52,22 @@
 
 .booking-status-left{
   color: white;
-  background-color: rgb(219, 82, 82);
+  background-color: #FD727E;
   font-size: 1rem;
   position: absolute;
   left: 33px;
   top: 33px;
   padding: 8px 10px;
+  border-radius: 50rem;
 }
 
 .booking-status-right{
   color: white;
-  background-color: rgb(82, 219, 82);
+  background-color: #C43C9F;
   font-size: 1rem;
   position: absolute;
   left: 465px;
   top: 33px;
   padding: 8px 10px;
+  border-radius: 50rem;
 }
