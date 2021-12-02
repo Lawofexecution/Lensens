@@ -2,7 +2,10 @@
   <div class="row">
     <div class="col-sm-12 p-0">
     <% if(@creator.email == "lc@lensens.ma") %>
-        <%= render "components/carousel", {images:  ["https://picsum.photos/id/531/1200/500","https://picsum.photos/id/304/1200/500","https://picsum.photos/id/513/1200/500","https://picsum.photos/id/674/1200/500"] }%>
+        <%= render "components/carousel", {images:  [
+          "https://res.cloudinary.com/dncwxfhjw/image/upload/w_1200,h_500,c_fill/v1638454574/lensens%20/alexandre-pellaes-6vAjp0pscX0-unsplash_fdcvxi.jpg",
+          "https://res.cloudinary.com/dncwxfhjw/image/upload/w_1200,h_500,c_fill/v1638454574/lensens%20/ru-recovery-ministries-zAUFtGIWc0E-unsplash_tryszj.jpg",
+          "https://res.cloudinary.com/dncwxfhjw/image/upload/w_1200,h_500,c_fill/v1638454572/lensens%20/isaw-company-Oqv_bQbZgS8-unsplash_eoatj1.jpg"] }%>
       <% else %>
         <%= render "components/carousel", {images:  ["https://picsum.photos/id/1077/1200/500","https://picsum.photos/id/1082/1200/500","https://picsum.photos/id/390/1200/500"] }%>
       <% end %>
