@@ -11,16 +11,28 @@
           <i class="fas fa-search"></i>
         </div>
         <div class="d-flex">
-          <%=f.input :role, as: :radio_buttons, collection: ["Photographe", "Vidéaste"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+          <%=f.input :role,
+            as: :radio_buttons,
+            collection: ["Photographe", "Vidéaste"],
+            label: "Createur",
+            wrapper_html: { class: "inline-inputs fieldset-radios" },
+            label_html: { class: "inline-labels"} %>
         </div>
         <div>
-        <%=f.input :category, as: :radio_buttons, collection: ["Portrait", "Corporate","Drone"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
+        <%=f.input :category,
+            as: :radio_buttons,
+            collection: ["Portrait", "Corporate","Drone"],
+            label: "Catégorie",
+            wrapper_html: { class: "inline-inputs fieldset-radios" },
+            label_html: { class: "inline-labels"} %>
         </div>
         <div class="d-flex">
-          <fieldset class="scheduler-border">
-            <legend class="scheduler-border">Prix (MAD/Jour)</legend>
-            <%=f.input :price_per_day, as: :radio_buttons, collection: ["2000", "3000","5000"], wrapper_html: { class: "inline-inputs" }, label_html: { class: "inline-labels"} %>
-          </fieldset>
+            <%=f.input :price_per_day,
+                        as: :radio_buttons,
+                        collection: ["2000", "3000","5000"],
+                        label: "Prix (MAD/J)",
+                        wrapper_html: { class: "inline-inputs fieldset-radios" },
+                        label_html: { class: "inline-labels"} %>
         </div>
 
         <%= f.button :submit, "Recherchez", class: "custom-btn" %>
@@ -41,9 +53,8 @@
   <div class="container">
     <div class="row">
       <% @creators.each do |creator| %>
-        <%#= render "components/creator_card",creator: creator %>
           <div class="col-4 p-0">
-            <%= link_to user_path(creator) do %>
+            <%= link_to user_path(creator), class: "creator-card-link" do %>
               <div class="creator-card">
                 <div class="img-container">
                   <% if creator.photo.attached? %>

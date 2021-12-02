@@ -1,7 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12 p-0">
-      <%= render "components/carousel" %>
+    <% if(@creator.email == "lc@lensens.ma") %>
+        <%= render "components/carousel", {images:  ["https://picsum.photos/id/531/1200/500","https://picsum.photos/id/304/1200/500","https://picsum.photos/id/513/1200/500","https://picsum.photos/id/674/1200/500"] }%>
+      <% else %>
+        <%= render "components/carousel", {images:  ["https://picsum.photos/id/1077/1200/500","https://picsum.photos/id/1082/1200/500","https://picsum.photos/id/390/1200/500"] }%>
+      <% end %>
     </div>
   </div>
 </div>

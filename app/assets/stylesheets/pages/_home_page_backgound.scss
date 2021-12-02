@@ -1,7 +1,7 @@
 /* Settings - feel free to play with these */
+
 $overlay_opacity: 0.3; // 0-1
 $overlay_pattern: 'https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlays/patterns/black-medium-checks.png'; // Grab the url of a png from here - http://html5backgroundvideos.com/pattern-overlays/
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 /**
@@ -9,246 +9,279 @@ $overlay_pattern: 'https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlay
  * if there are multiple videos in your site.
  * I.e. '.demo-video-wrapper' is the name of this particular video
  */
+
 .demo-video-wrapper {
-	background-image: url(https://d3k5xyayaartr5.cloudfront.net/_assets/home-video/beach-waves-loop.jpg);
+    background-image: url(https://d3k5xyayaartr5.cloudfront.net/_assets/home-video/beach-waves-loop.jpg);
 }
 
+
 /* Video overlay and content */
+
 .video-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	pointer-events: none; /* Allows right click menu on the video */
-	background: url($overlay_pattern) left top repeat;
-  opacity: $overlay_opacity;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    /* Allows right click menu on the video */
+    background: url($overlay_pattern) left top repeat;
+    opacity: $overlay_opacity;
 }
+
 .video-hero--content {
-	position: relative;
-	text-align: center;
-	color: #FFF;
-  margin-bottom: 60px;
-	text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    position: relative;
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 60px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
+
 .video-hero--content h2 {
-	font-size: 34px;
-	margin: 0 0 10px;
+    font-size: 34px;
+    margin: 0 0 10px;
 }
 
 .video-hero--content h3 {
-  font-size: 1.45rem;
-  margin-bottom: 4rem;
+    font-size: 1.45rem;
+    margin-bottom: 4rem;
 }
 
 .video-hero--content h1 {
-	font-size: 40px;
-	margin: 2rem;
+    font-size: 40px;
+    margin: 2rem;
 }
 
+
 /* Other stuff */
+
 body {
-	font-size: 16px;
-	line-height: 1.4;
-	color: #666;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #666;
 }
+
 a {
-	text-decoration: none;
-	color: #a46497;
+    text-decoration: none;
+    color: #a46497;
 }
+
 .cf:before,
 .cf:after {
     content: " ";
     display: table;
 }
+
 .cf:after {
     clear: both;
 }
+
 .page-width {
-  color:#ffffff;
-	width: 92%;
-	max-width: 960px;
-	margin: 0 auto;
-  // position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //  display: flex;
-  //  justify-content: center;
-  //  align-items: center;
+    color: #ffffff;
+    width: 92%;
+    max-width: 960px;
+    margin: 0 auto;
+    // position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  width: 100%;
+    //  height: 100%;
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: center;
 }
+
 #header {
-	background: #2c2d33;
-	padding: 2em 0;
+    background: #2c2d33;
+    padding: 2em 0;
 }
+
 #header a {
-	color: #FFF;
+    color: #FFF;
 }
+
 .title {
-	display: block;
-	font-weight: bold;
-	font-size: 18px;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
 }
+
 .subtitle {
-	display: block;
-	font-weight: normal;
-	font-size: 15px;
-	color: #959699;
+    display: block;
+    font-weight: normal;
+    font-size: 15px;
+    color: #959699;
 }
+
 a:hover .subtitle {
-	color: #FFF;
+    color: #FFF;
 }
+
 #site-title {
-	float: left;
-	margin: 0;
+    float: left;
+    margin: 0;
 }
+
 #content {
-	padding: 40px 0;
+    padding: 40px 0;
 }
 
 
 /* CSS from jQuery Background Video plugin */
+
+
 /**
  * Set default positioning as a fallback for if the plugin fails
  */
+
 .jquery-background-video-wrapper {
-	position: relative;
-	background-position: center center;
-	background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-	-webkit-background-size: cover;
-	   -moz-background-size: cover;
-	    	background-size: cover;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
+
 .jquery-background-video {
-	position: absolute;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	top: 50%;
-	left: 50%;
-	-o-object-fit: cover;
-	   object-fit: cover;
-	-webkit-transform: translate(-50%,-50%);
-	   -moz-transform: translate(-50%,-50%);
-	    -ms-transform: translate(-50%,-50%);
-	     -o-transform: translate(-50%,-50%);
-	    	transform: translate(-50%,-50%);
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
+
+
 /**
  * Fade in videos
  * Note the .js class - so non js users still
  * see the video
  */
+
 .js .jquery-background-video {
-	opacity: 0;
-	-webkit-transition: opacity 300ms linear;
-			transition: opacity 300ms linear;
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
 }
+
 .js .jquery-background-video.is-visible {
-	opacity: 1;
+    opacity: 1;
 }
+
 
 /**
  * Pause/play button
  */
+
 .jquery-background-video-pauseplay {
-	position: absolute;
-	background: transparent;
-	border: none;
-	box-shadow: none;
-	width: 20px;
-	height: 20px;
-	top: 15px;
-	right: 15px;
-	padding: 0;
-	cursor: pointer;
-	outline: none !important;
+    position: absolute;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 15px;
+    padding: 0;
+    cursor: pointer;
+    outline: none !important;
 }
+
 .jquery-background-video-pauseplay span {
-	display: none;
+    display: none;
 }
+
 .jquery-background-video-pauseplay:after,
 .jquery-background-video-pauseplay:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	-webkit-transition: all .3s ease;
-			transition: all .3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
 }
+
 .jquery-background-video-pauseplay.play:before {
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 15px solid #FFF;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #FFF;
 }
+
 .jquery-background-video-pauseplay.pause:before,
 .jquery-background-video-pauseplay.pause:after {
-	border-top: 10px solid #FFF;
-	border-bottom: 10px solid #FFF;
-	border-left: 5px solid #FFF;
+    border-top: 10px solid #FFF;
+    border-bottom: 10px solid #FFF;
+    border-left: 5px solid #FFF;
 }
+
 .jquery-background-video-pauseplay.pause:after {
-	left: 10px;
+    left: 10px;
 }
 
 .btn-ghost-one {
-  font-size: 1.3rem;
-  color:#ffff;
-  background-color: #FD727E;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+    font-size: 1.3rem;
+    color: #ffff;
+    background-color: #FD727E;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 .btn-ghost-one:hover {
-  opacity: 1;
-  background-color: #7340CF;
-  color: #FFF;
+    opacity: 1;
+    background-color: #7340CF;
+    color: #FFF;
 }
 
 .btn-ghost-two {
-  font-size: 1.3rem;
-  color:#ffff;
-  background-color: #7340CF;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+    font-size: 1.3rem;
+    color: #ffff;
+    background-color: #7340CF;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 .btn-ghost-two:hover {
-  opacity: 1;
-  background-color: #FD727E;
-  color: #FFF;
+    opacity: 1;
+    background-color: #FD727E;
+    color: #FFF;
 }
 
 img.lightbulb {
-  filter: invert(1);
-  margin: 3rem;
+    filter: invert(1);
+    height: 120px;
 }
 
 .hero-call-to-actions {
-
-  div {
-    width: 781px;
-    margin: 20px;
-  }
+    div {
+        width: 781px;
+        margin: 20px;
+    }
 }
 
 .hero-container {
-  color: #ffffff;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 8rem;
+    color: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 8rem;
 }
