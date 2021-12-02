@@ -2,8 +2,14 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index ]
 
   def index
-    @client_bookings = Booking.where(client_id: current_user.id)
-    @creator_bookings = Booking.where(creator_id: current_user.id)
+    @client_bookings = []
+    @creator_bookings = []
+    if(current_user.roles.where("title ilike 'Individual' OR title ilike 'Company'").count > 1)
+      @client_bookings = Booking.where(client_id: current_user.id)
+    end
+    if(current_user.roles.where("title ilike 'Photographe' OR title ilike 'Vidéaste'").count > 1)
+      @creator_bookings = Booking.where(creator_id: current_user.id)
+    end
   end
 
   def new
