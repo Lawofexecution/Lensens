@@ -65,7 +65,11 @@
                   <h2><%= creator.short_name %> </h2>
                   <p><%= truncate(creator.bio, length: 150) %></p>
                   <div class="d-flex  profil-rating-users">
-                    <%= render "components/rating",star:[3,4,5].sample  %>
+                    <% if(creator.email == "lc@lensens.ma")  %>
+                      <%= render "components/rating",star: 5  %>
+                    <% else %>
+                      <%= render "components/rating",star:[2,3,4,5].sample  %>
+                    <% end %>
                   </div>
                 </div>
               </div>

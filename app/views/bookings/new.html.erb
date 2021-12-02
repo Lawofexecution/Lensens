@@ -1,12 +1,24 @@
 <div class="booking-container container mt-5">
   <div class="booking-cards ">
+  <% if(@client_bookings.count == 0 && @creator_bookings.count ==0 )  %>
+    <div class="booking-card">
+      Aucune reservation à afficher actuellement.
+    </div>
+  <% end %>
     <% @client_bookings.each do |booking| %>
       <div class="booking-card">
        <span class="badge rounded-pill booking-status"> <%= booking.status %> </span>
        <div class="booking-photo" >
         <%= cl_image_tag booking.creator.photo.key  %>
        </div>
-        <p class="booking-name"><%= booking.creator.short_name %> </p>
+        <p class="booking-name"><%=  booking.status == "Accepté" ?  booking.creator.full_name : booking.creator.short_name %> </p>
+        <% if(booking.status == "Accepté" )  %>
+          <p>
+            <i class="fas fa-phone-alt"></i> : <strong> <%= booking.creator.phone_number  %> </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-at"></i> : <strong><%= booking.creator.email %> </strong>
+          </p>
+        <% end %>
         <div class="d-flex justify-content-between">
           <p> <i class="fas fa-search-location"></i><br><%=booking.creator.address %></p>
           <p><i class="fas fa-calendar-alt"></i><br><%= booking.start_date.strftime("%b %e - %l:%M %p") %> - <%= booking.end_date.strftime("%b %e - %l:%M %p") %></p>
@@ -16,14 +28,14 @@
      <% @creator_bookings.each do |booking| %>
       <div class="booking-card">
       <% if booking.status == "En attente" %>
-      <%
-        booking_refused = Booking.find(booking.id)
-        booking_refused.status = "Refusé"
-        booking_refused.save
-        booking_accepted =  Booking.find(booking.id)
-        booking_accepted.status = "Accepté"
-        booking_accepted.save
-      %>
+        <%
+          booking_refused = Booking.find(booking.id)
+          booking_refused.status = "Refusé"
+          booking_refused.save
+          booking_accepted =  Booking.find(booking.id)
+          booking_accepted.status = "Accepté"
+          booking_accepted.save
+        %>
 
         <%= simple_form_for [current_user,booking_accepted] do |f| %>
           <%= f.input :status, as: :hidden %>
@@ -38,11 +50,18 @@
         <span class="badge rounded-pill booking-status"> <%= booking.status %> </span>
       <% end %>
        <div class="booking-photo" >
-        <%= cl_image_tag booking.creator.photo.key  %>
+        <%= cl_image_tag booking.client.photo.key  %>
        </div>
-        <p class="booking-name"><%= booking.creator.short_name %> </p>
+        <p class="booking-name"><%=  booking.status == "Accepté" ?  booking.client.full_name : booking.client.short_name %> </p>
+        <% if(booking.status == "Accepté" )  %>
+          <p>
+            <i class="fas fa-phone-alt"></i> : <strong> <%= booking.client.phone_number  %> </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-at"></i> : <strong><%= booking.client.email %> </strong>
+          </p>
+        <% end %>
         <div class="d-flex justify-content-between">
-          <p> <i class="fas fa-search-location"></i><br><%=booking.creator.address %></p>
+          <p> <i class="fas fa-search-location"></i><br><%=booking.client.address %></p>
           <p><i class="fas fa-calendar-alt"></i><br><%= booking.start_date.strftime("%b %e - %l:%M %p") %> - <%= booking.end_date.strftime("%b %e - %l:%M %p") %></p>
         </div>
       </div>

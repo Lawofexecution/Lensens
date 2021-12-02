@@ -30,7 +30,7 @@ yassine = User.new(
   email: 'yd@lensens.ma',
   password: "password",
   password_confirmation: "password",
-  phone_number: '0661234432',
+  phone_number: '+212 6 61 234432',
   address: "29,rue constantine Casablanca"
 )
 yassine.photo.attach(io: file_y, filename: 'yassine.png', content_type: 'image/png')
@@ -49,8 +49,8 @@ salma = User.new(
   email: "sk@lensens.ma",
   password: "password",
   password_confirmation: "password",
-  phone_number: "07700000101",
-   address: "29,rue zerktouni Casablanca"
+  phone_number: "+212 7 70 240156",
+  address: "29,rue zerktouni Casablanca"
 )
 salma.photo.attach(io: file_s, filename: 'salma.png', content_type: 'image/png')
 salma.save!
@@ -68,8 +68,8 @@ creator = User.new(
   email: "lc@lensens.ma",
   password: "password",
   password_confirmation: "password",
-  phone_number: "07700000101",
-   address: "2,rue roudani Casablanca"
+  phone_number: "+212 6 61 540123",
+  address: "2,rue roudani Casablanca"
 )
 creator.photo.attach(io: file_l, filename: 'loubna.png', content_type: 'image/png')
 creator.save!
@@ -121,7 +121,7 @@ creator_addresses.each_with_index do |address, index|
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
-    phone_number: Faker::Number,
+    phone_number: "+212 6 61 540123",
     address: address
   )
   random_creator = URI.open(creator_photos[index])
